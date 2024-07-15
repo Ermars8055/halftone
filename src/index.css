@@ -1,13 +1,106 @@
+/* src/index.css */
 body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: #f0f0f0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.App {
+  text-align: center;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 600px;
+}
+
+.chatbot {
+  width: 100%;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.chatbot form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chatbot input[type="text"] {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.chatbot button {
+  padding: 8px 12px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.compass {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  margin: 20px auto;
+}
+
+.compass > .arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-style: solid;
+  border-width: 30px 20px 0 20px;
+  border-color: red transparent transparent transparent;
+  z-index: 1;
+}
+
+.compass > .compass-circle,
+.compass > .my-point {
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease-out;
+  background: url(https://purepng.com/public/uploads/large/purepng.com-compasscompassinstrumentnavigationcardinal-directionspointsdiagram-1701527842316onq7x.png) center no-repeat;
+  background-size: contain;
+}
+
+.compass > .my-point {
+  opacity: 0;
+  width: 20%;
+  height: 20%;
+  background: rgb(8, 223, 69);
+  border-radius: 50%;
+  transition: opacity 0.5s ease-out;
+}
+
+.messages {
+  margin-top: 20px;
+}
+
+.message {
+  background-color: #f0f0f0;
+  padding: 8px;
+  margin-bottom: 5px;
+  border-radius: 4px;
+  text-align: left;
 }
